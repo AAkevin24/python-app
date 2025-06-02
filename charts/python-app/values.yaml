@@ -1,35 +1,23 @@
 replicaCount: 1
-
 image:
   repository: aakevindocker/python-app
-  
   pullPolicy: IfNotPresent
-  
-  tag: v1
-
+  tag: cc4d36
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
-
 serviceAccount:
   create: false
   automount: true
   annotations: {}
-  
   name: ""
-
 podAnnotations: {}
 podLabels: {}
-
 podSecurityContext: {}
-
 securityContext: {}
-
-
 service:
   type: ClusterIP
   port: 5000
-
 ingress:
   enabled: true
   className: "nginx"
@@ -40,10 +28,7 @@ ingress:
         - path: /
           pathType: Prefix
   tls: []
-
-
 resources: {}
-  
 livenessProbe:
   httpGet:
     path: /api/v1/healthz
@@ -52,20 +37,13 @@ readinessProbe:
   httpGet:
     path: /api/v1/healthz
     port: http
-
 autoscaling:
   enabled: false
   minReplicas: 1
   maxReplicas: 100
   targetCPUUtilizationPercentage: 80
-  
 volumes: []
-
-
 volumeMounts: []
-
 nodeSelector: {}
-
 tolerations: []
-
 affinity: {}
