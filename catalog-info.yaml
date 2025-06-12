@@ -8,5 +8,5 @@ metadata:
   
 spec:
   type: service
-  owner: develop
+  owner: development
   lifecycle: experimental
